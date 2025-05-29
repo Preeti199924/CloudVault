@@ -1,3 +1,9 @@
+## 🧠 Author
+
+> 👩‍💻 **Preetimayee Patnaik** – MCA Graduate | Python Developer | Cloud Enthusiast  
+> GitHub: [https://github.com/Preeti199924]  
+> LinkedIn: [https://www.linkedin.com/in/preetimayee-patnaik/]
+
 # CloudVault – Secure File Upload System using AWS & Python
 
 CloudVault is a secure file upload and storage system built with **Python Flask** and **AWS S3**. It allows users to upload, download, and delete files through a simple web interface. All files are stored in Amazon S3 with IAM-based security.
