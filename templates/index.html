@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> CloudVault - Secure File Storage </title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="main-container">
+    <header>
+      <h1> ☁️ CloudVault </h1>
+      <p> Secure File Storage Powered by AWS S3 </p>
+    </header>
+
+    <section class="upload-section">
+      <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
+        <input type="file" name="file" id="fileInput" required>
+        <button type="submit">🚀 Upload</button>
+      </form>
+    </section>
+
+    <section class="file-list-section">
+      <h2>📁 Your Stored Files</h2>
+      {% if files %}
+      <ul class="file-list">
+        {% for file in files %}
+        <li class="file-item">
+          <span>{{ file }}</span>
+          <div class="file-actions">
+            <a href="{{ url_for('download', filename=file) }}">Download</a>
+            <a href="{{ url_for('delete', filename=file) }}" class="delete">Delete</a>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+        <p class="empty"> No files uploaded yet. </p>
+      {% endif %}
+    </section>
+  </div>
+</body>
+</html>
